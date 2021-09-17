@@ -75,9 +75,7 @@ def parse_yandex_news(url="https://yandex.ru/news/"):
 def write_db(x):
     db = MongoClient('localhost', 27017)['gb_3_mongo']
     news_collection = db.news_collection
-    #db.vacancy_collection.insert_many(x)
-    for i in x:
-        print(i)
+    db.news_collection.insert_many(x)
 
 news = []
 parse_mail_news()
